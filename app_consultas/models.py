@@ -1,7 +1,10 @@
 import email
+from sqlite3 import Timestamp
 from django.db import models
 import datetime
 from django.contrib.auth.models import User
+from pytz import timezone
+
 
 # Create your models here.
 class Consulta(models.Model):
