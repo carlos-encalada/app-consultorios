@@ -1,0 +1,21 @@
+{% extends "padre.html"%}
+
+{% load static %}
+
+
+{% block contenido%}
+<main>
+  <h1 style="color: blue">Registrar al Paciente:</h1>
+  <form action="paciente" method="POST">
+          {% csrf_token %}
+      <p style="color: blue">Nombre: <input type="text" name="nombre" required></p>
+      <p style="color: blue">Apellido: <input type="text" name="apellido" required></p>
+      <p style="color: blue">Prescripcion: <input type="text" name="prescripcion" required></p>
+      <p style="color: blue">Diagnostico: <input type="text" name="diagnostico" required></p>
+      <p style="color: blue">Proxima cita: <input type="date" name="fecha_proxima_cita" required></p>
+      <p style="color: blue">Hora proxima cita: <input type="time" name="hora_proxima_cita" required></p>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </main>
+{% endblock %}

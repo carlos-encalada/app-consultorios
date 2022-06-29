@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<main>
+    <h1 style="color: blue">Editar doctor:</h1>
+    <form action="{% url 'editar_doctor' doctor.id %}" method="POST">
+            {% csrf_token %}
+        <p style="color: blue">Nombre:</p>
+        <input type="text" name="nombre" value="{{doctor.nombre}}" required>
+        <p style="color: blue">Apellido:</p>
+        <input type="text" name="apellido" value="{{doctor.apellido}}" required>>
+        <p style="color: blue">Especialidad:</p>
+        <input type="text" name="especialidad" value="{{doctor.especialidad}}" required>>
+        <p style="color: blue">Email: </p>
+        <input type="email" name="email" value="{{doctor.email}}" required>
+        <p style="color: blue">Teléfono: </p>
+        <input type="tel" name="telefono" value="{{doctor.telefono}}" required>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    </main>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<main>
+  <div style="color: blue;">
+    <h3>Resultado de la búsqueda:</h3>
+     {% if consulta_doctor %}
+   <ul style="list-style: none;">
+ {% for x in consulta_doctor %}
+
+              <li>Id: {{ x.id }}</li>
+              <li>Nombre del doctor: {{ x.nombre }}</li>
+              <li>Apellido del doctor: {{ x.apellido }}</li>
+              <li>especialidad: {{ x.especialidad }}</li>
+              <li>Email: {{ x.email }}</li>
+              <li>Teléfono: {{ x.telefono }}</li>   
+              <button><a href="{% url 'eliminar_doctor' x.id %}">Eliminar registro</a></button>
+              <button><a href="{% url 'editar_doctor' x.id %}">Editar registro</a></button>
+      {% endfor %}
+      </ul>
+  {% else %}
+          <p>No se encontraron consultas</p> 
+  {% endif %}
+    </div> 
+    
+
+</main>
+    
+{% endblock %}
+

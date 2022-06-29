@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<main>
+    <h1 style="color: blue">Editar paciente:</h1>
+    <form action="{% url 'editar_paciente' paciente.id %}"" method="POST">
+            {% csrf_token %}
+        <p style="color: blue">Nombre: </p>
+        <input type="text" name="nombre" value="{{paciente.nombre}}" required>
+        <p style="color: blue">Apellido:</p>
+        <input type="text" name="apellido" value="{{paciente.apellido}}" required>>
+        <p style="color: blue">Prescripción: </p>
+        <input type="text" name="prescripcion" value="{{paciente.prescripcion}}" required>
+        <p style="color: blue">Diagnostico:</p>
+        <input type="text" name="diagnostico" value="{{paciente.diagnostico}}" required>
+        <p style="color: blue">Proxima cita: {{paciente.fecha_proxima_cita}}</p>
+        <input type="date" name="fecha_proxima_cita" required>
+        <p style="color: blue">Hora proxima cita: {{paciente.hora_proxima_cita}}</p>
+        <input type="time" name="hora_proxima_cita" required>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    </main>
+{% endblock %}

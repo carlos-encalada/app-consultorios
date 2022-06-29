@@ -1,0 +1,19 @@
+{% extends "padre.html"%}
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+
+                        
+                        <h2 style="color: black;">Acerca de mi</h2>
+                        <p style="color: rgb(95, 46, 46); text-align: justify;">Hola, soy Carlos Encalada. Soy mexicano, abogado y con mucho interés por la programación. Este es mi desarrollo usando python y su framework django.</p>
+                        <p style="color: rgb(95, 46, 46); text-align: justify;">El proyecto App Consultorio sirver para manejar información de un hospital como son las citas, los pacientes y los doctores.</p>
+                        <p style="color: rgb(95, 46, 46); text-align: justify;">De igual manera tiene diferentes vistas que permiten al usuario registrarse para utilizar las funciones propias del programa, hacer login, logout, altas de citas, pacientes y doctores.</p>
+                        <p style="color: rgb(95, 46, 46); text-align: justify;">También cuenta con la función de editar, citas, pacientes, doctores y perfiles.</p>
+                        <p style="color: rgb(95, 46, 46); text-align: justify;"> Cada usuario puede ver su avatar (el upload se hace mediante solicitud al admin) en las vistas de login e inicio.</p>
+                        <p><a href="{% url 'login' %}" style="color: blue;">Regresar a inicio</a></p>
+                        
+{% endblock %}

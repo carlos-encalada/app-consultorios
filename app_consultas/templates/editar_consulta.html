@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<main>
+    <h1 style="color: blue">Editar consulta:</h1>
+    <form action="{% url 'editar_consulta' consulta.id %}"" method="POST">
+            {% csrf_token %}
+        <p style="color: blue">Fecha de cita:{{consulta.fecha_cita}}</p>
+        <input type="date" name="fecha_cita" required>
+        <p style="color: blue">Hora de cita:{{consulta.hora}}</p>
+        <input type="time" name="hora" required>
+        <p style="color: blue">Nombre del paciente:</p>
+        <input type="text" name="nombre_paciente" value="{{consulta.nombre_paciente}}" required>
+        <p style="color: blue">Apellido del paciente: </p>
+        <input type="text" name="apellido_paciente" value="{{consulta.apellido_paciente}}" required>
+        <p style="color: blue">Email:</p>
+        <input type="email" name="email" value="{{consulta.email}}" required>
+        <p style="color: blue">Telefono:</p>
+        <input type="tel" name="tel" value="{{consulta.tel}}" required> 
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    </main>
+{% endblock %}

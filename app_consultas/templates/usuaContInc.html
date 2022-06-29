@@ -1,0 +1,12 @@
+{% extends "padre.html"%}
+
+{% load static %}
+
+
+{% block contenido %}
+       
+        <h2 style="color:blue;">Usuario o contraseña incorrecta.</h2>
+        <a href="{% url 'login' %}">Regresar a inicio</a>
+        
+{% endblock %}
+

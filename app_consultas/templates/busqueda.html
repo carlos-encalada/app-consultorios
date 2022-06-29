@@ -1,0 +1,36 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<main>
+   <div>
+      <h1 style="color: blue">Buscar consulta:</h1>
+      <form action="buscar_consulta" method="" >
+      <p style="color: blue">Nombre del paciente:</p>
+      <input type="text" name="nombre_paciente" required>
+      <input type="submit" value="Buscar">
+      </form>
+    </div>
+  
+    <div>
+      <h1 style="color: blue">Buscar paciente:</h1>
+      <form action="buscar_paciente" method="" > 
+      <p style="color: blue">Nombre del paciente:</p>
+      <input type="text" name="nombre" required>
+      <input type="submit" value="Buscar">
+      </form>
+    </div>
+ 
+    <div>
+      <h1 style="color: blue">Buscar doctor:</h1>
+      <form action="buscar_doctor" method="">
+      <p style="color: blue">Nombre del doctor:</p>
+      <input type="text" name="nombre" required>
+      <input type="submit" value="Buscar" >
+      </form>
+    </div>
+  </main>
+    
+    
+{% endblock %}
