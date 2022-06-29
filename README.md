@@ -1,6 +1,11 @@
 # app-consultorios
 
 Bienvenid@
+Hola, soy Carlos Encalada. Soy mexicano, abogado y con mucho interés por la programación. Este es mi desarrollo usando python y su framework django.
+El proyecto App Consultorio sirver para manejar información de un hospital como son las citas, los pacientes y los doctores.
+De igual manera tiene diferentes vistas que permiten al usuario registrarse para utilizar las funciones propias del programa, hacer login, logout, altas de citas, pacientes y doctores.
+También cuenta con la función de editar, citas, pacientes, doctores y perfiles.
+ Cada usuario puede ver su avatar (el upload se hace mediante solicitud al admin) en las vistas de login e inicio.
 
 AppConsulta es un sistema de información en línea para el manejo de hospitales.
 
