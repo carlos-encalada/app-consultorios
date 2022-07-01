@@ -20,11 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    
-    path('', views.inicio, name='padre'),
     path('admin/', admin.site.urls),
+    path('', views.login_request, name='login'),
     path('app_consultas/', include('app_consultas.urls')),
     path('mensajes/', include('mensajes.urls')),
+   
 ]
 
 

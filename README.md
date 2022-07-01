@@ -20,6 +20,7 @@ Una vez estando en la AppConsulta se podrá hacer lo siguiente:
 7. Realizar búsquedas en la base de datos de Consultas, Pacientes y Doctores.
 8. Se pueden editar los valores de Consultas, Pacientes y Doctores. 
 9. Se puede editar el perfil del usuario. 
+10. Enviar mensajes que son desplegados en un feed, que solo puede ser modificado por un admin.
 
 Recuerda no dejar ningún campo en blanco ya que es necesario para que la información se pueda dar de alta. 
 

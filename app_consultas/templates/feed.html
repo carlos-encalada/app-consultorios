@@ -42,8 +42,6 @@
         {% endif %}
         {% if request.user.is_authenticated %}
         <p class="text-muted small mb-4">Bienvenid@, {{user.username}}</p>
-       
-        
         {% endif %}
     </div>
 </nav>
@@ -53,33 +51,42 @@
                         <div class="col-xl-4">
                             <div class="text-center text-white" style="background-color: rgb(207, 195, 178)">
                                 <h1 class="mb-4" style="color:rgb(88, 63, 63)">¡Mensajes de la AppConsultorios!</h1>
-{% for post in posts%}
-<article>
-    <div class="container-article">
-        <div style="border:rgb(227, 71, 23) 2px solid;"/>
-            <h2 class="username" style="font-size: 20px; color:blue;">@{{post.user.username}}</h2>
-            <time data-time="#" style="color: rgb(186, 88, 55);">{{post.timestamp}}</time>
-            <div class="post" style="color: black">{{post.content}}</div>
-        </div>
-    </div>
-</article>
-{% endfor %}
-<br>
-{% if request.user.is_authenticated %}
-<a href="{% url 'post' %}" style="color: blue; border: 1px black solid;">Enviar un mensaje</a>
-{% endif %}
-<br>
-<br>
-{% if request.user.is_authenticated %}
-<p><a href="{% url 'padre' %}" style="color: blue;">Regresar a inicio</a></p>
-{% endif %}
+       
+       
+       
+<main>           
+    {% if posts %}              
+      {% for post in posts%}
+        <article>
+            <div class="container-article" style="background-color: white;">
+                <div style="border:rgb(227, 71, 23) 2px solid;">
+                    <p class="username" style="font-size: 15px; color:blue;">@{{post.user.username}}</p>
+                    <p class="post" style="color: black; font-style: italic;">"{{post.content}}"</p>
+                    <time data-time="#" style="color: rgb(186, 88, 55); font-size: 15px;">{{post.timestamp}}</time>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+        {% else%}
+        <p style="color:black">(No hay comentarios aún)</p>
+        {% endif %}
+        
+        <br>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'post' %}" style="color: red; border: 2px black solid; background-color: black;  text-decoration:none; font-weight: bolder;">ENVIAR UN MENSAJE</a>
+        {% endif %}
+        <br>
+        <br>
+        {% if request.user.is_authenticated %}
+        <p><a href="{% url 'padre' %}" style="color: blue;">Regresar a inicio</a></p>
+        {% endif %}
 
-{% if request.user.is_authenticated %}
-<a href="{% url 'logout' %}">Hacer logout</a>
-{% endif %}
-<br>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+        <br>
 
-
+ </main> 
 <!-- Footer-->
 <footer class="footer">
     <div class="container">
